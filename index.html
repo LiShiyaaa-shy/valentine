@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine Day</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/love red.jpg" type="image/png">
+</head>
+<body>
+    <div id="login">
+        <img src="https://media.tenor.com/pU3lYfJeJiYAAAAi/shourimajo-bubble-kittea.gif" alt="login page" width="250px">
+        <h4>HAPPY VALENTINE DAY</h4>
+        <input type="text" id="nameInput" placeholder="ketik namanya yaww!"> <br><br>
+        <div class="password-display" id="password-display">&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;</div>
+        <div class="password-input" id="password-buttons"></div>
+        <button id="startGame">Start game</button> <br>
+        <p id="error-message" style="color: red; display: none;">Sandi salah!</p>
+        <button id="btn_photocard">Photocard</button><br>
+        <button id="btn_choco">Choco </button>
+    </div>
+
+    <div id="game">
+        <h2>Tic-Tac-Toe</h2>
+        <p><span id="username">-</span></p>
+        <canvas id="canvas"></canvas>
+        <p id="status"></p>
+        <button id="back">Back to the menu</button>
+        <button id="restart">Reset</button> <br>
+        <div id="chooseLove">
+            <h3>Pilih Desain Love:</h3>
+            <button id="chooseRed">❤️ Love Merah</button>
+            <button id="chooseChoco">🍫 Love Coklat</button>
+        </div>
+        
+    </div>
+
+    <div id="photocard">
+        <h1>PHOTOCARD</h1> <br>
+        <button><a href="https://www.mediafire.com/file/3mvg4f6v3q35oin/photo+pap.zip/file">Click here!!</a></button> <br><br>
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="./assets/photo pap/pap1.jpeg" alt="Foto 1">
+                <img src="./assets/photo pap/pap2.jpeg" alt="Foto 2">
+                <img src="./assets/photo pap/pap3.jpeg" alt="Foto 3">
+                <img src="./assets/photo pap/pap4.jpeg" alt="Foto 4">
+                <img src="./assets/photo pap/pap5.jpeg" alt="Foto 5">
+                <img src="./assets/photo pap/pap6.jpeg" alt="Foto 6">
+                <img src="./assets/photo pap/pap7.jpeg" alt="Foto 7">
+                <img src="./assets/photo pap/pap8.jpeg" alt="Foto 8">
+                <img src="./assets/photo pap/pap9.jpeg" alt="Foto 9">
+                <img src="./assets/photo pap/pap10.jpeg" alt="Foto 10">
+            </div>
+            <div class="buttons">
+                <button onclick="prevSlide()">&#10094;</button>
+                <button onclick="nextSlide()">&#10095;</button>
+            </div>
+        </div> <br> <br> <br>
+        <div class="gallery">
+            <img src="./assets/photo pap/pap11.jpeg" alt="Foto 1">
+            <img src="./assets/photo pap/pap12.jpeg" alt="Foto 2">
+            <img src="./assets/photo pap/pap13.jpeg" alt="Foto 3">
+            <img src="./assets/photo pap/pap14.jpeg" alt="Foto 4">
+            <img src="./assets/photo pap/pap15.jpeg" alt="Foto 5">
+            <img src="./assets/photo pap/pap16.jpeg" alt="Foto 6">
+        </div>
+        <br> <br>
+
+    </div>
+
+    <div id="choco">
+        <img src="./assets/bear.jpg" alt="background">
+        <div class="container">
+            <br>alo aloo sayanggkoehh, happy valentine day yaww
+
+                ga sadar yah kita udah 237 hari sejak kita pacaran mwehehehehe. ini aku nulisnya di tanggal 10 yaww. mepet banget sama deadline, tapi jujur aku pengen banget 
+                ngirim coklat buat sayang tapi tabunganku cuman bisa buat beli bahan coklat sama box nya aja.. biaya pengirimanny aku gabisa. takutnya kalo telat ngirim coklatnya basi. <br>
+                
+                maaf banget yah sayang buat semuanya, dari sikapku yang egois, gabisa komunikasi yang baik, dan masih banyak hal lain yang bikin sayang ngerasa ga di hargain atau sakit hati. 
+                maaf yaa kalo aku ngemis ngemis ke sayang biar hubungan kita tetep lanjut padahal sayang keknya udah capek banget sama sikapku pas itu. <br>
+                
+                sumpah pikiranku campur aduk antara nurutin ego apa perasaan. ujung-ujungnya aku malah nangis lagi, sumpah malu banget.. harga diriku kayak turun banget pas itu tapi yang ku 
+                pengen itu aku masih tetep sama sayang. aku ada pertanyaan buat sayang yang pengen banget ku omongin tapi kayak gabisa gitu. pas sayang minta putus kemaren, sayang ga jadi putus 
+                itu karna kasihan? kasihan liat aku nangis nangisin sayang kayak gitu? <br>
+                
+                oh iya, tau gasi cewekmu itu pengecut tauk. aku takut banget buat banyak salah tapi tiap kali salah kayak ga sadar diri. aku takut banget buat nyampaiin pendapatku sendiri yang bisa 
+                jadi sebuah masalah. <br>
+                
+                sumpah, pikiranku campur aduk sekarang. padahal cuman ngetik doang udh kayak gabisa napas apalagi ngomong apa apa. maaf yaa kalo aku kurang terbuka sama sayang </br>
+                semangatt sayanggg buat apapun itu, aku selalu ngedukung sayang asalkan positif hehe. makasii bangett yaa udah jadi salah satu orang spesial di perjalanan hidupku. hehe pacarmu ini sangat amat cengeng, berisik ga si.. lain kali ga gitu lagi.
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+    <script src="./menu.js"></script>
+    <script>
+        
+
+        let index = 0;
+        const slides = document.querySelectorAll(".carousel img");
+        
+        function showSlide() {
+            const carousel = document.querySelector(".carousel");
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+        
+        function nextSlide() {
+            index = (index + 1) % slides.length;
+            showSlide();
+        }
+        
+        function prevSlide() {
+            index = (index - 1 + slides.length) % slides.length;
+            showSlide();
+        }
+        
+        setInterval(nextSlide, 3000); // Auto-slide every 3 seconds
+
+
+    </script>
+</body>
+</html>
